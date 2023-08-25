@@ -3,18 +3,18 @@
 
 /**
  * list_len - shall return the num of elements in the linked list
- * @hr: shall point to the list_tmy list
+ * @h: shall point to the list_tmy list
  *
- * Return: number of elements in h
+ * Return: will be number of elements in h
  */
-size_t list_len(const list_tmy *hr)
+size_t list_len(const list_t *h)
 {
- size_t k = 0;
+ size_t n = 0;
 
- while (hr)
+ while (h)
  {
- k++;
- hr = hr->next;
+ n++;
+ h = h->next;
  }
- return (k);
+ return (n);
 }

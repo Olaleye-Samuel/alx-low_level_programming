@@ -7,19 +7,19 @@
  *
  * Return: will be the number of nodes printed
  */
-size_t print_list(const list_tmy *hr)
+size_t print_list(const list_t *h)
 {
- size_t v = 0;
+ size_t s = 0;
 
- while (hr)
+ while (h)
  {
- if (!hr->str)
+ if (!h->str)
  printf("[0] (nil)\n");
  else
- printf("[%u] %s\n", hr->len, hr->str);
- hr = hr->next;
- v++;
+ printf("[%u] %s\n", h->len, h->str);
+ h = h->next;
+ s++;
  }
 
- return (v);
+ return (s);
 }

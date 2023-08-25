@@ -9,33 +9,33 @@
  *
  * Return: will address of the new element, or NULL if it failed
  */
-list_t *add_node_end(list_t **heads, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
- list_t *newmy;
- list_t *temp = *heads;
- unsigned int lenmy = 0;
+ list_t *new;
+ list_t *temp = *head;
+ unsigned int len = 0;
 
- while (str[lenmy])
- lenmy++;
+ while (str[len])
+ len++;
 
- newmy = malloc(sizeof(list_t));
- if (!newmy)
+ new = malloc(sizeof(list_t));
+ if (!new)
  return (NULL);
 
- newmy->str = strdup(str);
- newmy->lenmy = len;
- newmy->next = NULL;
+ new->str = strdup(str);
+ new->len = len;
+ new->next = NULL;
 
- if (*heads == NULL)
+ if (*head == NULL)
  {
- *heads = newmy;
- return (newmy);
+ *head = new;
+ return (new);
  }
 
  while (temp->next)
  temp = temp->next;
 
- temp->next = newmy;
+ temp->next = new;
 
- return (newmy);
+ return (new);
 }
